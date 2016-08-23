@@ -19,4 +19,20 @@ class NotesController extends Controller
     	
     	return back();
     }
+
+    public function edit(Note $note) {
+    
+    	return view('notes.edit', compact('note'));
+    	
+    }
+
+    public function update(Request $request, Note $note) {
+    	
+    	// update note with all form data requested upon update trigger
+    	// need to do validation first in a real situation...this was just from lesson
+    	$note->update($request->all()); 
+
+    	return  back();
+    	
+    }
 }
