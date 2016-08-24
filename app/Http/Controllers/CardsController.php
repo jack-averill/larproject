@@ -16,8 +16,8 @@ class CardsController extends Controller
     public function show(Card $card) {
 
     	$card->load('notes.user');
-    	return $card;
-    	// return view('cards.show', compact('card'));	
+
+    	return view('cards.show', compact('card'));	
     	
     }
 }
